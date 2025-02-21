@@ -3,7 +3,7 @@ name: Docker Build and Push
 on:
   push:
     branches:
-      - main  # Updated to use 'main' branch
+      - main  # Change if using a different branch
 
 jobs:
   build-and-push:
@@ -28,4 +28,4 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: hardikrai1229/fastapi-app:latest  # Updated Docker Hub username
+          tags: ${{ secrets.DOCKER_USERNAME }}/fastapi-app:latest
