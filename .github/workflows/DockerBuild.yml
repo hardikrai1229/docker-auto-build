@@ -3,7 +3,7 @@ name: Docker Build and Push
 on:
   push:
     branches:
-      - main  # Change if using a different branch
+      - main  # Updated branch name
 
 jobs:
   build-and-push:
@@ -28,9 +28,4 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/fastapi-app:latest
-      - name: Debug Secrets
-        run: |
-          echo "DOCKER_USERNAME=${{ secrets.DOCKER_USERNAME }}"
-          echo "DOCKERTOKEN is set"
-
+          tags: hardikrai1229/fastapi-app:latest  # Ensure correct Docker Hub repo name
